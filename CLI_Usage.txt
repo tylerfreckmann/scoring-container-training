@@ -1,0 +1,52 @@
+CLI Usage:
+
+== Syntax ==
+> python mm_docker_cli.py -h
+usage: mm_docker_cli.py [-h]
+                        {listmodel,lastlogs,systemlog,publish,launch,execute,query,stop,score}
+                        ...
+
+Model Container Deployer CLI
+
+optional arguments:
+  -h, --help            show this help message and exit
+
+actions:
+  {listmodel,lastlogs,systemlog,publish,launch,execute,query,stop,score}
+
+>python mm_docker_cli.py listmodel -h
+usage: mm_docker_cli.py listmodel [-h] [-v] key
+
+positional arguments:
+  key            partial model name or 'all'
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -v, --verbose  turn on verbose
+
+== Commands ==
+
+> listmodel [all|<partial model name>]
+List model summary information for all models in your MM test environment (or under your specified criteria). If you know the image has been available in the docker repository AND you don’t want to republish, you could skip 
+
+> publish [model_id]
+The CLI will retrieve the model zip from model repository and copy astore if it is SAS model and it has astore, then generate Docker image and register with Docker repository. It returns image url.
+
+> launch [image url]
+The CLI will ask Kubenetes to deploy the image in a container instance and expose the service in assigned pod, return deployment name and the service url.
+
+> execute [service url] [csv file]
+The CLI will upload the test data in csv and perform the scoring inside launched instance. It returns a test id.
+
+> query [service url] [test id]
+The CLI will retrieve the test result from the container instance and store it in logs/ subdirectory with the input data. 
+
+> stop [deployment name]
+After being used, it is highly recommended to stop the deployment and kill pod and its service instance.
+
+> score [image url] [csv file]
+This CLI command is used to batch the above few steps. It will combine the following steps: launch, execute, query, stop.
+
+> lastlogs [all|<N>]
+This CLI command is used to list the execution history in reverse order.
+

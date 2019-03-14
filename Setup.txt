@@ -1,0 +1,65 @@
+The file mainly lists the items which user should prepare before running the utility. So far I have tested on three kinds of run-time environments: Dev, AWS, GCP. User has to install and/or prepare the resources and configure cli.properties file before utility in fully function.
+
+- Requirement for all run-time environments:
+  -- Python 3 (prefer under anaconda which will help organize the packages)
+  -- Python packages, such as AWSCLI (boto3), docker, kubernetes, python-slugify
+  -- Docker daemon
+  -- Kubenetes client
+  -- Mount the shared astore directory from remote to local (before we have better method to download astore file)
+    --- First make sure that you have correct /etc/exportfs configured in MM environment. 
+    --- Mount the shared astore directory (/opt/sas/viya/config/data/modelsvr/astore) in the test machine where CLI utility locates. 
+    --- Mount the directory to /astore in local machine (Linux) or Z: drive (Windows).
+
+
+- Requirements for AWS:
+  -- Prepare Amazon resources: IAM role, Cluster VPC, EKS Cluster, EKS worker nodes
+
+  -- Config node security group to accept incoming traffic from the machine running utility
+
+  -- Install awscli and Python boto3 package
+
+  -- Update Kubeconfig entry
+  > aws eks --region us-east-1 update-kubeconfig --name [cluster name]
+
+  -- Download iam authenticator, AWS Kubectl
+
+  -- Download aws-auth-cmd and enable worker nodes to join EKS cluster
+  > kubectl apply -f aws-auth-cm.yaml
+
+  -- Set active AWS profile
+  > getawskey -a --duration 43200 (for SAS internal)
+  > set AWS_PROFILE=XXXXXX
+  
+  -- Renew AWS token if needed
+
+
+- Requirements for GCP:
+  -- Enable APIs (Container, Kubernetes) in Google Cloud Platform
+
+  -- Create cluster in console
+
+  -- Install Google Cloud SDK
+
+  -- Configure Docker to use gcloud tool to authenticate requests
+  > gcloud auth configure-docker
+
+  -- Download auth token key from console and put it in the directory
+  > API & Services -> Credentials: create credentials > Service account key
+
+  -- Fetch cluster endpoint and auth data and update kubeconfig entry (auth token expires every 60 mins)
+  > gcloud container clusters get-credentials mm-docker-models-gke --zone us-east4-a [--project <project name>]
+  > kubectl get nodes
+  ( To verify the worker nodes followed by last command)
+
+  -- Configure firewall to allow the node port range (30000-32767)
+  > gcloud compute firewall-rules create gke-rule --allow tcp:30000-32767
+
+
+- Configure cli.properties
+  -- set property values under each section
+
+  -- set default provider value for run-time environment
+
+- Configure mmAuthorization.py
+  -- replace user and password in getAuthToken( )
+
