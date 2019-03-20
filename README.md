@@ -2,7 +2,7 @@
 
 ## 1 Install Anaconda3 and relevant python packages
 
-Make sure you are yourself (e.g. tyfrec) and download and install Anaconda3:
+**Make sure you are yourself (e.g. tyfrec)** and download and install Anaconda3:
 
 ```sh
 cd ~
