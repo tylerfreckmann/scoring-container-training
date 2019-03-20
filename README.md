@@ -5,10 +5,10 @@
 Make sure you are yourself (e.g. tyfrec) and download and install Anaconda3:
 
 ```sh
-$ cd ~
-$ wget https://repo.anaconda.com/archive/Anaconda3-2018.12-Linux-x86_64.sh
-$ chmod +x Anaconda3-2018.12-Linux-x86_64.sh
-$ ./Anaconda3-2018.12-Linux-x86_64.sh
+cd ~
+wget https://repo.anaconda.com/archive/Anaconda3-2018.12-Linux-x86_64.sh
+chmod +x Anaconda3-2018.12-Linux-x86_64.sh
+./Anaconda3-2018.12-Linux-x86_64.sh
 ```
 
 When it asks you where you want to install Anaconda3, put `/workshop/anaconda3`. It will be the prompt after accepting the license like below:
@@ -42,13 +42,13 @@ Install the relevant python packages: `$ pip install docker kubernetes python-sl
 ## 2 Mount the astore directory of your Viya environment
 
 ```sh
-$ sudo mkdir /astore
-$ sudo mount gtpisilon.unx.sas.com:/ifs/viyafiles/astore /astore
+sudo mkdir /astore
+sudo mount gtpisilon.unx.sas.com:/ifs/viyafiles/astore /astore
 ```
 
 ## 3 Download this repo
 
 ```sh
-$ cd ~
-$ git clone https://gitlab.sas.com/tyfrec/eyapmas.git
+cd ~
+git clone https://gitlab.sas.com/tyfrec/eyapmas.git
 ```
