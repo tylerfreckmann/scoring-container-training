@@ -45,3 +45,8 @@ Install the relevant python packages: `$ pip install docker kubernetes python-sl
 $ sudo mkdir /astore
 $ sudo mount gtpisilon.unx.sas.com:/ifs/viyafiles/astore /astore
 ```
+
+## 3 Download this repo
+
+```sh
+$ 
