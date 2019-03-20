@@ -28,7 +28,11 @@ Reply `yes` to the installer initializing Anaconda3 in your `~/.bashrc` file.
 
 Reply `no` to installing VSCode.
 
-Source your `~/.bashrc` file to activate python: `$ source ~/.bashrc`.
+Source your `~/.bashrc` file to activate python: `$ source ~/.bashrc`. If had trouble with the .bashrc file, do this:
+
+```sh
+export PATH="/workshop/anaconda3/bin:$PATH # only lasts for this session
+```
 
 Verify that you've successfully installed python 3:
 
@@ -37,7 +41,11 @@ $ python --version
 Python 3.7.1
 ```
 
-Install the relevant python packages: `$ pip install docker kubernetes python-slugify boto3`
+Install the relevant python packages:
+
+```sh
+pip install docker kubernetes python-slugify boto3
+```
 
 ## 2 Mount the astore directory of your Viya environment
 
