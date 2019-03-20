@@ -49,4 +49,5 @@ $ sudo mount gtpisilon.unx.sas.com:/ifs/viyafiles/astore /astore
 ## 3 Download this repo
 
 ```sh
-$ 
+$ cd ~
+$ git clone https://gitlab.sas.com/tyfrec/eyapmas.git
