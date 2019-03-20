@@ -31,8 +31,11 @@ Reply `no` to installing VSCode.
 Source your `~/.bashrc` file to activate python: `$ source ~/.bashrc`. If had trouble with the .bashrc file, do this:
 
 ```sh
-export PATH="/workshop/anaconda3/bin:$PATH # only lasts for this session
+export PATH="/workshop/anaconda3/bin:$PATH
 ```
+
+(Only lasts for this session).
+
 
 Verify that you've successfully installed python 3:
 
