@@ -51,3 +51,4 @@ $ sudo mount gtpisilon.unx.sas.com:/ifs/viyafiles/astore /astore
 ```sh
 $ cd ~
 $ git clone https://gitlab.sas.com/tyfrec/eyapmas.git
+```
