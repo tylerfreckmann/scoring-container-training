@@ -77,6 +77,7 @@ gcloud auth configure-docker
 CLUSTER="eyap-mas"
 ZONE="us-central1-a"
 gcloud container clusters get-credentials $CLUSTER --zone $ZONE
+kubectl get nodes
 ```
 
 8. Configure firewall to allow the node port range (30000-32767)
