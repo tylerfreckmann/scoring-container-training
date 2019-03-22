@@ -138,4 +138,26 @@ In the `getAuthToken` function on line 29, change `user` and `password` to be `t
 
 ## 6 Start Jupyter Notebook to walk through demo
 
-While still in this repo, run the following commands to 
+We need to configure jupyter notebook to be externally accessible. Run the following command to generate a jupyter notebook config file:
+
+```sh
+jupyter notebook --generate-config
+```
+
+It will create the following config file: `~/.jupyter/jupyter_notebook_config.py`. Open it up and edit it as follows:
+
+1. Find line 82, uncomment it and set it as follows: `c.NotebookApp.allow_remote_access = True`
+2. Find line 204, uncomment it and set it as follows: `c.NotebookApp.ip = '*'`
+3. Find line 267, uncomment it and set it as follows: `c.NotebookApp.open_browser = False`
+
+Then, run the jupyter notebook from this directory (eyapmas):
+
+```sh
+jupyter notebook
+```
+
+It will print out a link for you to copy/paste into your browser. Something like: http://(hostname or 127.0.0.1):8888?token=asldkf. Copy/Paste it into a browser, but edit out the ()'s and "or 127.0.0.1" portions so that it will actually work. Fundamentally you need to hit your host at port 8888 with the provided token.
+
+# Walk through script
+
+Once you hit that jupyter notebook, click on the Docker CLI-GCP.ipynb notebook and we can walk through the examples together.
