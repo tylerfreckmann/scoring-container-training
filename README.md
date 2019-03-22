@@ -52,8 +52,8 @@ sudo mount eyap-mas.gtp-americas.sashq-d.openstack.sas.com:/opt/sas/viya/config/
 
 ```sh
 cd ~
-git clone https://gitlab.sas.com/tyfrec/eyapmas.git
-cd eyapmas
+git clone https://gitlab.sas.com/eyapbootcamp/thursday.git
+cd thursday
 ```
 
 ## 4 Configure GCP
