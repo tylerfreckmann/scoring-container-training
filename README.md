@@ -16,43 +16,15 @@ The CLI uses Python 3 and a couple other packages. We install them below.
 **Make sure you are yourself (e.g. tyfrec)** and download and install Anaconda3:
 
 ```sh
-cd ~
-wget https://repo.anaconda.com/archive/Anaconda3-2018.12-Linux-x86_64.sh
-chmod +x Anaconda3-2018.12-Linux-x86_64.sh
-./Anaconda3-2018.12-Linux-x86_64.sh
+cd /tmp
+curl https://repo.anaconda.com/archive/Anaconda3-2018.12-Linux-x86_64.sh -Lvo Anaconda.sh
+chmod +x Anaconda.sh
+./Anaconda.sh -b -p /workshop/anaconda3 
+cd
+export PATH="/workshop/anaconda3/bin:$PATH"
 ```
 
-When it asks you where you want to install Anaconda3, put `/workshop/anaconda3`. It will be the prompt after accepting the license like below:
-
-```sh
-Anaconda3 will now be installed into this location:
-/r/ge.unx.sas.com/vol/vol610/u61/tyfrec/anaconda3
-
-  - Press ENTER to confirm the location
-  - Press CTRL-C to abort the installation
-  - Or specify a different location below
-
-[/r/ge.unx.sas.com/vol/vol610/u61/tyfrec/anaconda3] >>> /workshop/anaconda3
-```
-
-Reply `yes` to the installer initializing Anaconda3 in your `~/.bashrc` file.
-
-Reply `no` to installing VSCode.
-
-Source your `~/.bashrc` file to activate python:
-
-```sh
-source ~/.bashrc
-```
-
-If had trouble with the .bashrc file, do this:
-
-```sh
-export PATH="/workshop/anaconda3/bin:$PATH
-```
-
-(Only lasts for this session).
-
+(You'll have to export the apropriate python path for any subsequent shell sessions)
 
 Verify that you've successfully installed python 3:
 
