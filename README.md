@@ -128,3 +128,14 @@ kubectl config view
 6. Under `[GCP]` set `project.name` to your project name
 7. Under `[GCP]` set `service.account.keyfile` to the name of the keyfile you created earlier (sas-tyfrec-209092a0e3d2.json)
 8. Under `[GCP]` set `base.repo.web.url` to your GCP Docker repo. It will look like this: `console.cloud.google.com/gcr/images/<YOUR-PROJECT-NAME>`
+9. Under `[GCP]` set `kubernetes.context` to the kubernetes context you got from the `kubeclt config view` command. Something like: `gke_project-name_zone_cluster-name`
+
+## 5 Configure mmAuthorization.py
+
+Open the mmAuthorization.py file in this repo to edit the authorization info for Model Manager.
+
+In the `getAuthToken` function on line 29, change `user` and `password` to be `tyfrec` and `tyfrec1`.
+
+## 6 Start Jupyter Notebook to walk through demo
+
+While still in this repo, run the following commands to 
