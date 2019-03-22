@@ -26,7 +26,7 @@ class mmAuthorization(object):
         Constructor
         '''
         
-    def getAuthToken(self, url, user='edmdev', password='Go4thsas'):
+    def getAuthToken(self, url, user='tyfrec', password='tyfrec1'):
         headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/x-www-form-urlencoded',
