@@ -70,3 +70,6 @@ sudo mount gtpisilon.unx.sas.com:/ifs/viyafiles/astore /astore
 cd ~
 git clone https://gitlab.sas.com/tyfrec/eyapmas.git
 ```
+
+## 4 Configure GCP
+
