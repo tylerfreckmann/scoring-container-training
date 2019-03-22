@@ -97,7 +97,7 @@ gcloud auth configure-docker
 3. Navigate to the Kubernetes Engine and create a new cluster to host the scoring applications. Name it whatever you want (I'm naming mine eyap-mas) and keep all the defaults. It will take a few minutes to spin up.
 4. Navigate to APIs & Services > Credentials
 5. Select Create Credentials > Service account key
-6. Select "Compute Engine default service account". Make sure JSON is selected. Click "Create" and download the key to your network drive and then inside the eyap-mas repository. (U:\eyapmas drive on Windows or \\sashq\root\<your_username>\eyapmas). Or move it there after the fact. The CLI needs this key.
+6. Select "Compute Engine default service account". Make sure JSON is selected. Click "Create" and download the key to your network drive and then inside the eyap-mas repository. (U:\eyapmas drive on Windows or \\sashq\root\<YOUR_USERNAME>\eyapmas). Or move it there after the fact. The CLI needs this key.
 7. Fetch cluster endpoint and auth data and update kubeconfig entry (auth token expires every 60 mins). Replay CLUSTER with your Kubernetes cluster name below (eyap-mas in my case) and ZONE with your zone (us-central1-a in my case)
 
 ```sh
@@ -120,5 +120,9 @@ kubectl config view
 
 ### 4.2 Configure CLI properties
 
-1. Open cli.properties
-2. Edit the following properties:
+1. Open cli.properties, and perform the following modifications
+2. Under `[CLI]`, comment out `provider.type=Dev`, and uncomment `provider.type=GCP`
+3. Under `[SAS]`, set `model.repo.host` to `http://gtp-viya.openstack.sas.com`
+4. Even though we're not using the `[DEV]` environment, for good practice, let's change it to our personal settings: Set `base.repo` to `docker.sas.com/<YOUR_USERNAME>/`. Set `base.repo.web.url` to `docker.sas.com/repository/tyfrec/`
+5. You can set the `[AWS]` settings later (if you'd like to deploy to an AWS kubernetes).
+6. Under `[GCP]` set `project.name`
