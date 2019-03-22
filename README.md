@@ -73,7 +73,7 @@ We must mount the shared astore directory of our Model Manager environment for n
 
 ```sh
 sudo mkdir /astore
-sudo mount gtpisilon.unx.sas.com:/ifs/viyafiles/astore /astore
+sudo mount eyap-mas.gtp-americas.sashq-d.openstack.sas.com:/opt/sas/viya/config/data/modelsvr/astore /astore/
 ```
 
 ## 3 Download this repo
@@ -123,7 +123,7 @@ kubectl config view
 
 1. Open cli.properties, and perform the following modifications
 2. Under `[CLI]`, comment out `provider.type=Dev`, and uncomment `provider.type=GCP`
-3. Under `[SAS]`, set `model.repo.host` to `http://gtp-viya.openstack.sas.com`
+3. Under `[SAS]`, set `model.repo.host` to `http://eyap-mas.gtp-americas.sashq-d.openstack.sas.com`
 4. Even though we're not using the `[DEV]` environment, for good practice, let's change it to our personal settings: Set `base.repo` to `docker.sas.com/<YOUR_USERNAME>/`. Set `base.repo.web.url` to `docker.sas.com/repository/tyfrec/`
 5. You can set the `[AWS]` settings later (if you'd like to deploy to an AWS kubernetes).
 6. Under `[GCP]` set `project.name` to your project name
@@ -135,7 +135,7 @@ kubectl config view
 
 Open the mmAuthorization.py file in this repo to edit the authorization info for Model Manager.
 
-In the `getAuthToken` function on line 29, change `user` and `password` to be `tyfrec` and `tyfrec1`.
+In the `getAuthToken` function on line 29, change `user` and `password` to be `viyademo01` and `lnxsas`.
 
 ## 6 Start Jupyter Notebook to walk through demo
 
