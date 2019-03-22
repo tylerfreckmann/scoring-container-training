@@ -1,5 +1,12 @@
 # Set Up
 
+## 0 Docker, the Kubernetes client, and the AWS/GCP/Azure CLIs
+
+Make sure that you've gone through the following pre-work steps:
+
+* [Pre-work 01](https://gitlab.sas.com/eyapbootcamp/prework/blob/master/01-openstack-basics.md)
+* [Pre-work 02](https://gitlab.sas.com/eyapbootcamp/prework/blob/master/02-docker-basics.md)
+
 ## 1 Install Anaconda3 and relevant python packages
 
 **Make sure you are yourself (e.g. tyfrec)** and download and install Anaconda3:
