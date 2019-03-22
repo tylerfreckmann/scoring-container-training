@@ -125,4 +125,6 @@ kubectl config view
 3. Under `[SAS]`, set `model.repo.host` to `http://gtp-viya.openstack.sas.com`
 4. Even though we're not using the `[DEV]` environment, for good practice, let's change it to our personal settings: Set `base.repo` to `docker.sas.com/<YOUR_USERNAME>/`. Set `base.repo.web.url` to `docker.sas.com/repository/tyfrec/`
 5. You can set the `[AWS]` settings later (if you'd like to deploy to an AWS kubernetes).
-6. Under `[GCP]` set `project.name`
+6. Under `[GCP]` set `project.name` to your project name
+7. Under `[GCP]` set `service.account.keyfile` to the name of the keyfile you created earlier (sas-tyfrec-209092a0e3d2.json)
+8. Under `[GCP]` set `base.repo.web.url` to your GCP Docker repo. It will look like this: `console.cloud.google.com/gcr/images/<YOUR-PROJECT-NAME>`
