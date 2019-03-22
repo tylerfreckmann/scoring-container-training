@@ -64,7 +64,7 @@ Python 3.7.1
 Install the relevant python packages:
 
 ```sh
-pip install docker kubernetes python-slugify boto3
+pip install docker "kubernetes==8.0.1" python-slugify boto3
 ```
 
 ## 2 Mount the astore directory of your Viya environment
