@@ -114,7 +114,7 @@ Select "Compute Engine default service account". Make sure JSON is selected. Cli
 
 ![gcp-cred3](img/cred3.PNG)
 
-Put the key in your cloud-user `~/thursday/` directory. The CLI will need this key.
+Put the key in your cloud-user `~/thursday/` directory. The CLI will need this key. Copy it's name to a notepad or textfile for future reference.
 
 ### 0.5 Configure CLI properties
 
