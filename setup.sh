@@ -52,7 +52,7 @@ EOF
 pip install docker "kubernetes==8.0.1" python-slugify boto3
 
 # mount astore directory from Model Manager environment
-MODELMANAGERHOST=eyap-mas.gtp-americas.sashq-d.openstack.sas.com:/opt/sas/viya/config/data/modelsvr/astore
+MODELMANAGERHOST=eyap-mas.gtp-americas.sashq-d.openstack.sas.com
 sudo mkdir /astore
 sudo mount $MODELMANAGERHOST:/opt/sas/viya/config/data/modelsvr/astore /astore/
 
