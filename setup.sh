@@ -58,7 +58,7 @@ sudo mount $MODELMANAGERHOST:/opt/sas/viya/config/data/modelsvr/astore /astore/
 
 # configure GCP
 CLUSTERNAME=eyap-mas
-gcloud auth configure-docker
+gcloud auth configure-docker --quiet
 gcloud container clusters create --num-nodes=3                  \
                                    --machine-type="n1-standard-2" \
                                    $CLUSTERNAME
