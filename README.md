@@ -94,8 +94,20 @@ This setup script does the following (necessary for running this prototype):
 * Creates a Google Kubernetes Engine (GKE) cluster
 * Opens the GCP firewall to the applications we'll be running on that cluster
 
+**AFTER THE SCRIPT RUNS, YOU NEED TO LOG BACK IN TO A NEW SHELL TO ASSUME THE NEWLY CREATED PERMISSIONS AND PROPERTIES**
 
+### 0.4 Acquire GCP service account key
 
+While the above script is running, sign into [GCP](https://console.cloud.google.com) as your SAS account and make sure you are in your sas-<USER> project.
+
+Using the left-side navigation bar, find "APIs & Services" -> "Credentials":
+![gcp-apis-credentials](img/Credentials1.PNG)
+
+Select "Create credentials" -> "Service account key":
+![gcp-cred2](img/cred2.PNG)
+
+Select "Compute Engine default service account". Make sure JSON is selected. Click "Create" and download the key:
+![gcp-cred3](img/cred3.PNG)
 
 ## 0 Docker, the Kubernetes client, and the AWS/GCP/Azure CLIs
 
