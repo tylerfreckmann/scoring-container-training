@@ -1,6 +1,6 @@
 # Productionizing Models
 
-<img src="img/overview-image.png" width="600">
+<img src="img/overview-image.png" width="1200">
 
 # Set Up
 
