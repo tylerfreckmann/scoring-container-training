@@ -1,3 +1,7 @@
+# Productionizing Models
+
+![overview-image](img/overview-image.png)
+
 # Set Up
 
 ## 0 Docker, the Kubernetes client, and the AWS/GCP/Azure CLIs
