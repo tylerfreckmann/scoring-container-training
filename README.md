@@ -79,6 +79,11 @@ If this is not the case, run `gcloud init`, select your `sas-<USER>` project, an
 
 ### 0.3 Run the setup script
 
+Add and execute bit to the script:
+```sh
+chmod +x setup.sh
+```
+
 ```sh
 ./setup.sh
 ```
