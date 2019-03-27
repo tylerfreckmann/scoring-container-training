@@ -89,7 +89,11 @@ This setup script does the following (necessary for running this prototype):
 * Installs anaconda3
 * Sets up jupyter notebook
 * Installs required python packages for this CLI
-* 
+* Mounts the astore directory of the remote Model Manager environment for the CLI to access
+* Configures gcloud to use docker
+* Creates a Google Kubernetes Engine (GKE) cluster
+* Opens the GCP firewall to the applications we'll be running on that cluster
+
 
 
 
