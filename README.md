@@ -114,19 +114,21 @@ Select "Compute Engine default service account". Make sure JSON is selected. Cli
 
 ![gcp-cred3](img/cred3.PNG)
 
-Put the key in your cloud-user `~/thursday/` directory. The CLI will need this key. Copy it's name to a notepad or textfile for future reference.
+Put the key in your cloud-user `~/thursday/` directory. The CLI will need this key.
 
 ### 0.5 Configure CLI properties
 
-1. Open cli.properties, and perform the following modifications
-2. Under `[CLI]`, make sure `provider.type=GCP` is the only line uncommented. This is where we can select which Kubernetes provider we want to use to deploy the scoring containers.
-3. Under `[SAS]`, make sure `model.repo.host` is `http://eyap-mas.gtp-americas.sashq-d.openstack.sas.com`. This is the SAS Model Manager environment we've set up for you where the models were developed and registered to.
-4. Even though we're not using the `[DEV]` environment, for good practice, let's change it to our personal settings: Set `base.repo` to `docker.sas.com/<YOUR_USERNAME>/`. Set `base.repo.web.url` to `docker.sas.com/repository/<YOUR_USERNAME/`. The `base.repo.web.url` is used when the CLI prints where to find the containers that get pushed to your remote docker repo (for verification purposes).
-5. You can set the `[AWS]` settings later (if you'd like to deploy to an AWS kubernetes).
-6. Under `[GCP]` set `project.name` to your project name
-7. Under `[GCP]` set `service.account.keyfile` to the name of the keyfile you created earlier (sas-<YOUR_USER>-as0981238.json)
-8. Under `[GCP]` set `base.repo.web.url` to your GCP Docker repo. It will look like this: `console.cloud.google.com/gcr/images/<YOUR-PROJECT-NAME>`. This is also just used for verification purposes.
-9. Under `[GCP]` set `kubernetes.context` to the kubernetes context you get from the `kubeclt config view` command. Something like: `gke_project-name_zone_cluster-name`
+* Copy the name of the .json key file to a notepad for future use.
+* Run `kubeclt config view` and copy the `current-context` to a notepad for future use. It should look something like: `gke_PROJECT-NAME_REGION_eyap-mas`
+* Open cli.properties, and perform the following modifications
+* Under `[CLI]`, make sure `provider.type=GCP` is the only line uncommented. This is where we can select which Kubernetes provider we want to use to deploy the scoring containers.
+* Under `[SAS]`, make sure `model.repo.host` is `http://eyap-mas.gtp-americas.sashq-d.openstack.sas.com`. This is the SAS Model Manager environment we've set up for you where the models were developed and registered to.
+* Even though we're not using the `[DEV]` environment, for good practice, let's change it to our personal settings: Set `base.repo` to `docker.sas.com/<YOUR_USERNAME>/`. Set `base.repo.web.url` to `docker.sas.com/repository/<YOUR_USERNAME/`. The `base.repo.web.url` is used when the CLI prints where to find the containers that get pushed to your remote docker repo (for verification purposes).
+* You can set the `[AWS]` settings later (if you'd like to deploy to an AWS kubernetes).
+* Under `[GCP]` set `project.name` to your project name
+* Under `[GCP]` set `service.account.keyfile` to the name of the keyfile you created earlier (sas-<YOUR_USER>-as0981238.json)
+* Under `[GCP]` set `base.repo.web.url` to your GCP Docker repo. It will look like this: `console.cloud.google.com/gcr/images/<YOUR-PROJECT-NAME>`. This is also just used for verification purposes.
+* Under `[GCP]` set `kubernetes.context` to the kubernetes context you get from the `kubeclt config view` command. Something like: `gke_PROJECT-NAME_REGION_eyap-mas`
 
 ## 0.6 Configure mmAuthorization.py
 
