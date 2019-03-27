@@ -33,9 +33,11 @@ cloud-user
 
 ```sh
 cd ~
-git clone 
+git clone https://gitlab.sas.com/eyapbootcamp/thursday.git
+cd thursday
+```
 
-### 0.1 Verify Docker, Kubernetes, and GCP configuration
+### 0.2 Verify Docker, Kubernetes, and GCP configuration
 
 Verify Docker is installed:
 
@@ -75,9 +77,19 @@ Make sure you're logged in as your SAS account, and the project you are working 
 
 If this is not the case, run `gcloud init`, select your `sas-<USER>` project, and configure a default zone (doesn't matter which but choose one).
 
-### 0.2 Clone this repo
+### 0.3 Run the setup script
 
+```sh
+./setup.sh
+```
 
+This setup script does the following (necessary for running this prototype):
+* Makes `/workshop` accessible to cloud-user
+* Adds cloud-user to the docker group
+* Installs anaconda3
+* Sets up jupyter notebook
+* Installs required python packages for this CLI
+* 
 
 
 
