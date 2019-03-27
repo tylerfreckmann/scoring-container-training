@@ -8,10 +8,78 @@ This project contains a prototype of a process for productionizing models in con
     * Pushes the container to a repo and launches the container on a Kubernetes cluster
     * Executes scoring of a file against that container
 
+See Setup.txt for general setup instructions. This README describes how to set up the environment to run in the images we've configured for the EYAP bootcamp. Please contact [Tyler Freckmann](mailto:tyler.freckmann@sas.com) if you have questions about this.
 
 <img src="img/overview-image.png" width="1200">
 
-# Set Up
+## About the project
+
+The jupyter notebook files (.ipynb) contain examples of how to run the CLI. This prototype has been tested and works on 3 environments: Dev, AWS, and GCP. The configuration for these different environments can be found in `cli.properties`. 
+
+## Set Up (on EYAP bootcamp servers)
+
+Make sure you are on the environment you've configured for the EYAP bootcamp. The exercises will use GCP, so we will be verifying and configuring for that environment, but if you'd like to run in Dev or AWS mode, make sure you've configured those environments appropriately according to Setup.txt
+
+### 0.0 Verify User
+
+**WE WILL BE LOGGING IN AS CLOUD-USER AND REMAIN AS CLOUD-USER FOR THE DURATION OF THE EXERCISES. MAKE SURE YOU ARE CLOUD-USER.**
+
+```sh
+$ whomai
+cloud-user
+```
+
+### 0.1 Clone (and fork if you desire) this repo into your home directory
+
+```sh
+cd ~
+git clone 
+
+### 0.1 Verify Docker, Kubernetes, and GCP configuration
+
+Verify Docker is installed:
+
+```sh
+docker --version
+```
+
+Verify Kubernetes kubectl is installed (Don't worry if you get a connection error. Just make sure the command is recognized.)
+
+```sh
+kubectl version
+```
+
+Make sure your GCP account is configured with:
+
+```sh
+gcloud info
+```
+
+The expected output should contain an account, project, and compute region and zone toward the bottom of the response like so:
+
+```
+Account: [tyler.freckmann@sas.com]
+Project: [sas-tyfrec]
+
+Current Properties:
+  [core]
+    project: [sas-tyfrec]
+    account: [tyler.freckmann@sas.com]
+    disable_usage_reporting: [True]
+  [compute]
+    region: [us-east1]
+    zone: [us-east1-b]
+```
+
+Make sure you're logged in as your SAS account, and the project you are working in is `sas-<YOUR_USER>`. The region and zone don't matter, but make sure they are set to something.
+
+If this is not the case, run `gcloud init`, select your `sas-<USER>` project, and configure a default zone (doesn't matter which but choose one).
+
+### 0.2 Clone this repo
+
+
+
+
 
 ## 0 Docker, the Kubernetes client, and the AWS/GCP/Azure CLIs
 
