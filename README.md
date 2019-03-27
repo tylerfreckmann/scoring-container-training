@@ -1,5 +1,14 @@
 # Productionizing Models
 
+This project contains a prototype of a process for productionizing models in containers. In general, here is how the process works:
+
+* A CLI is provided that automates a lot of this process. It:
+    * Queries SAS Model Manager for available models
+    * Pulls down model files and base container templates to build a purpose-built container for scoring that particular model
+    * Pushes the container to a repo and launches the container on a Kubernetes cluster
+    * Executes scoring of a file against that container
+
+
 <img src="img/overview-image.png" width="1200">
 
 # Set Up
