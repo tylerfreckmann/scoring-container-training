@@ -119,7 +119,7 @@ Put the key in your cloud-user `~/thursday/` directory. The CLI will need this k
 ### 0.5 Configure CLI properties
 
 * Copy the name of the .json key file to a notepad for future use.
-* Run `kubeclt config view` and copy the `current-context` to a notepad for future use. It should look something like: `gke_PROJECT-NAME_REGION_eyap-mas`
+* Run `kubectl config view` and copy the `current-context` to a notepad for future use. It should look something like: `gke_PROJECT-NAME_REGION_eyap-mas`
 * Open cli.properties, and perform the following modifications
 * Under `[CLI]`, make sure `provider.type=GCP` is the only line uncommented. This is where we can select which Kubernetes provider we want to use to deploy the scoring containers.
 * Under `[SAS]`, make sure `model.repo.host` is `http://eyap-mas.gtp-americas.sashq-d.openstack.sas.com`. This is the SAS Model Manager environment we've set up for you where the models were developed and registered to.
@@ -128,7 +128,7 @@ Put the key in your cloud-user `~/thursday/` directory. The CLI will need this k
 * Under `[GCP]` set `project.name` to your project name
 * Under `[GCP]` set `service.account.keyfile` to the name of the keyfile you created earlier (sas-<YOUR_USER>-as0981238.json)
 * Under `[GCP]` set `base.repo.web.url` to your GCP Docker repo. It will look like this: `console.cloud.google.com/gcr/images/<YOUR-PROJECT-NAME>`. This is also just used for verification purposes.
-* Under `[GCP]` set `kubernetes.context` to the kubernetes context you get from the `kubeclt config view` command. Something like: `gke_PROJECT-NAME_REGION_eyap-mas`
+* Under `[GCP]` set `kubernetes.context` to the kubernetes context you get from the `kubectl config view` command. Something like: `gke_PROJECT-NAME_REGION_eyap-mas`
 
 ## 0.6 Configure mmAuthorization.py
 
